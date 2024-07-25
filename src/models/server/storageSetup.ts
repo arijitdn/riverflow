@@ -5,7 +5,7 @@ import { storage } from "./config";
 export default async function getOrCreateStorage() {
   try {
     await storage.getBucket(attachmentBucket);
-    console.log("Storage Connected");
+    console.log(":: Storage Connected ::");
   } catch (error) {
     try {
       await storage.createBucket(
@@ -24,8 +24,8 @@ export default async function getOrCreateStorage() {
         ["jpg", "png", "gif", "jpeg", "webp", "heic"]
       );
 
-      console.log("Storage Created");
-      console.log("Storage Connected");
+      console.log(":: Storage Created ::");
+      console.log(":: Storage Connected ::");
     } catch (error) {
       console.error("Error creating storage:", error);
     }
